@@ -1,7 +1,8 @@
 import React from "react";
 import lighthouse from '@lighthouse-web3/sdk';
+import dotenv from 'dotenv';
 
-function App() {
+function Upload() {
 
   const progressCallback = (progressData) => {
     let percentageDone =
@@ -10,30 +11,21 @@ function App() {
   };
 
   const uploadFile = async(file) =>{
-    // Push file to lighthouse node
-    // Both file and folder are supported by upload function
+    // Pushes file or folder to lighthouse node
     // Third parameter is for multiple files, if multiple files are to be uploaded at once make it true
     // Fourth parameter is the deal parameters, default null
-    const output = await lighthouse.upload(file, "68c0d172.a72befcd4e7049db9ec2b47dc1cfcb9c", false, null, progressCallback);
+    const output = await lighthouse.upload(file, process.env.API_KEY, false, null, progressCallback);
     console.log('File Status:', output);
-    /*
-      output:
-        data: {
-          Name: "filename.txt",
-          Size: 88000,
-          Hash: "QmWNmn2gr4ZihNPqaC5oTeePsHvFtkWNpjY3cD6Fd5am1w"
-        }
-      Note: Hash in response is CID.
-    */
+    // Hash generated is CID
 
       console.log('Visit at https://gateway.lighthouse.storage/ipfs/' + output.data.Hash);
   }
 
   return (
-    <div className="App">
+    <div className="Upload">
       <input onChange={e=>uploadFile(e.target.files)} type="file" />
     </div>
   );
 }
 
-export default App;
+export default Upload;

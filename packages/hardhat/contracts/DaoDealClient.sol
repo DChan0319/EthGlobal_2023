@@ -142,7 +142,7 @@ contract DaoDealClient is Ownable {
 		uint256 index = dealRequests.length;
 		dealRequests.push(deal);
 
-		// creates a unique ID for the deal proposal -- there are many ways to do this
+		// creates a unique ID for the deal proposal
 		bytes32 id = keccak256(
 			abi.encodePacked(block.timestamp, msg.sender, index)
 		);

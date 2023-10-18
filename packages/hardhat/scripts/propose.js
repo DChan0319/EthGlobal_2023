@@ -13,7 +13,7 @@ function storeProposalId(proposalId) {
         // You can initialize `proposals` with a default value if you'd like
         proposals = {};
       }
-  // Ensure there is an array for the current chainId
+  // Provide array for the current chainId
     if (!proposals[chainId]) {
          proposals[chainId] = [];
      }

@@ -20,7 +20,7 @@ const signAuthMessage = async(privateKey, messageRequested) =>{
 
 const getApiKey = async() =>{
   const wallet = {
-    publicKey: address, //>> Example: '0xEaF4E24ffC1A2f53c07839a74966A6611b8Cb8A1'
+    publicKey: address,
     privateKey: PRIVATE_KEY
   }
   const verificationMessage = (
