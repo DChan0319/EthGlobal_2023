@@ -32,7 +32,7 @@ const DealRequestStruct = [
 
 const proposalsFile = "proposals.json"
 
-const PROPOSAL_DESCRIPTION = "Proposal #1 Store ATTAK_CAT!"
+const PROPOSAL_DESCRIPTION = "Propose to share patient reports with the DAO group."
 
 module.exports = {
     networkConfig,
